@@ -40,7 +40,7 @@ def submit(message):
     config = get_config()
     conversation = [{"role": "user", "content": message}]
     url = config['BASICURL'] + "/deployments/" + config['MODELNAME'] + "/chat/completions/?api-version=" + config['APIVERSION']
-    headers = { 'Content-Type': 'application/json', 'api-key': config['ACCESS_TOKEN'] }
+    headers = { 'Content-Type': 'application/json', 'api-key': config['ACCESS_TOKEN_GPT'] }
     payload = {'messages': conversation}
     response = requests.post(url, json=payload, headers=headers)
     if response.status_code == 200:
