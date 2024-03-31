@@ -1,4 +1,4 @@
-PU usage percentage
+#CPU usage percentage
 CPU_USAGE=$(top -b -n 1 | grep "Cpu(s)" | awk '{print $2}' | awk -F. '{print $1}')
 
 # Get memory usage percentage
